@@ -63,7 +63,7 @@ class CancerElement(Element):
     @renderer
     def fib(self, request, tag):
         count = reactor.getThreadPool().workers
-        n = max(0, 40 - count)
+        n = max(0, 30 - count)
         d = deferToThread(fibonacci, n)
         @d.addCallback
         def cb(result):
